@@ -22,6 +22,7 @@ public class Catalogo {
     protected int nPages;
 @ManyToMany(mappedBy = "catalogoList")
 private List<Prestito> prestiti=new ArrayList<>();
+    public Catalogo() {}
 //    GETTER SETTER TO_STRING
     public Long getId() {
         return id;

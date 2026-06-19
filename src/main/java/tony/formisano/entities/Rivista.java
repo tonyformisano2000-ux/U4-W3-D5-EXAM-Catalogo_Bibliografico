@@ -2,18 +2,21 @@ package tony.formisano.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 @Entity
 public class Rivista extends Catalogo{
-    @Column(name="Period")
-    private int period;
+    @Enumerated(EnumType.STRING)
+    private Periodicita period;
 public Rivista(){}
+
 //    GETTER SETTER TO_STRING
-    public int getPeriod() {
+    public Periodicita getPeriod() {
         return period;
     }
 
-    public void setPeriod(int period) {
+    public void setPeriod(Periodicita period) {
         this.period = period;
     }
 

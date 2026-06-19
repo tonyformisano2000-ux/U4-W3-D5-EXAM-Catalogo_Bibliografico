@@ -10,12 +10,12 @@ public class Prestito {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="Start")
+    @Column(name="start_loan")
     private LocalDate startLoan;
-    @Column(name="End")
+    @Column(name="end_loan")
     private LocalDate endLoan;
-    @Column(name="Returned")
-    private int returnedLoan;
+    @Column(name="returned_loan")
+    private LocalDate returnedLoan;
 @ManyToOne
     private Utente utente;
 @ManyToMany
@@ -42,23 +42,25 @@ public Prestito(){}
     }
 
     public void setStartLoan(LocalDate startLoan) {
-        startLoan = startLoan;
+        this.startLoan = startLoan;
     }
 
     public LocalDate getEndLoan() {
         return endLoan;
     }
 
-    public void setEndLoan(int endLoan) {
+    public void setEndLoan(LocalDate endLoan) {
         endLoan = endLoan;
     }
 
-    public int getReturnedLoan() {
+    public LocalDate getReturnedLoan() {
         return returnedLoan;
     }
 
-    public void setReturnedLoan(int returnedLoan) {
-        returnedLoan = returnedLoan;
+    public void setReturnedLoan(LocalDate returnedLoan) {
+
+    if(returnedLoan!=null){returnedLoan = returnedLoan;}
+    else{returnedLoan=null;}
     }
 
     public Utente getUtente() {
@@ -85,7 +87,7 @@ public Prestito(){}
                 ", borrowedElements=" + catalogoList +
                 ", loanStartingDate=" + startLoan +
                 ", loanEndDate=" + endLoan +
-                ", loanReturnedDate=" + catalogoList +
+                ", loanReturnedDate=" + returnedLoan +
                 '}';
     }
 }
