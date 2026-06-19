@@ -16,7 +16,7 @@ public class Application {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("u4w3d5");
         EntityManager em = emf.createEntityManager();
-        
+
         CatalogoDAO catalogoDAO = new CatalogoDAO(em);
         LibroDAO libroDAO = new LibroDAO(em);
         PrestitoDAO prestitoDAO = new PrestitoDAO(em);
